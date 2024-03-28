@@ -1,0 +1,201 @@
+.logo{
+    font: italic small-caps bold 24px/2 cursive;
+}
+.nav{
+    margin-left: 50px;
+}
+.yellow{
+    color: orange;
+}
+.ms-3{
+    padding: 5px;
+}
+.container-fulid{
+    padding: 20px;
+    margin-top: 10px;
+}
+.text-box.padding-percent-2.text-center img{
+    width: 80px;
+}
+.conteiner{
+    margin-top: 100px;
+    text-align: center;
+}
+.cards{
+    padding: 20px;
+    display: flex;
+    width: 1500px;
+}
+.card.text-white.bg-dark.mb-3{
+    margin: 20px;
+    max-width: 27em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card-body img{
+    max-width: 25em;
+}
+#formlogin{
+    display: none;
+    margin-top: 10%;
+    color: black;
+}
+.modal-content{
+    background: rgba(255, 255, 255, .3);
+}
+.close{
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px 10px;
+    border: none;
+}
+.modal-content input{
+    margin-top: 20px;
+}
+#formsignup{
+    display: none;
+    margin-top: 10%;
+    color: black;
+}
+.content .prewie img{
+    width: 100%;
+    height: 25vw;
+}
+.prewie .color{
+    position: absolute;
+    width: 100%;
+    height: 25vw;
+    background-color: rgba(7, 7, 7, 0.7);
+}
+.prewie{
+    display: flex;
+}
+.text{
+    margin-left: 45%;
+    margin-top: 10%;
+    position: absolute;
+}
+.cards .btn.btn-warning a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+.content-center{
+    text-align: center;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(247, 247, 247, 0.463);
+    padding: 20px 0;
+}
+.list img{
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+.list{
+    display: flex;
+}
+.content-right{
+    margin-right: 3vw;
+    width: 25vw;
+    padding-bottom: 2%;
+    height: fit-content;
+    background-color: rgba(247, 247, 247, 0.463);
+    text-align: center
+}
+.content-right div{
+    margin-left: 8%;
+    margin-top: 2%;
+}
+.button{
+    padding: 20px;
+    background-color: rgba(201, 100, 17, 0.574);
+    margin-right: 3vw;
+    border-radius: 50%;
+}
+a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+}
+
+a:link:not(.not) {
+    color: #265301;
+}
+
+.not{
+    color: black;
+}
+
+a:visited:not(.not) {
+    color: #437a16;
+}
+
+a:focus:not(.not) {
+    border-bottom: 1px solid;
+    background: #bae498;
+}
+
+a:hover:not(.not) {
+    border-bottom: 1px solid;
+    background: #cdfeaa;
+}
+
+a:active:not(.not) {
+    background: #265301;
+    color: #cdfeaa;
+}
+.rating-area {
+    overflow: hidden;
+    width: 265px;
+    margin: 0 auto;
+}
+.rating-area:not(:checked) > input {
+    display: none;
+}
+.rating-area:not(:checked) > label {
+    float: right;
+    width: 42px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 32px;
+    line-height: 32px;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+    content: '★';
+}
+.rating-area > input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+    color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+}
+.rate-area > label:active {
+    position: relative;
+}
+.avatar-1{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.avatar-2{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.avatar-3{
+    height: 80%;
+}
