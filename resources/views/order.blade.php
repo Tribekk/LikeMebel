@@ -31,7 +31,7 @@
                             <label for="floatingPassword" style="color: black">Телефон</label>
                         </div>
                         <div class="form-floating mt-2">
-                            <p>Вы можете прикрепить фотографию изделия ии чертёшь для наглядности</p>
+                            <p>Вы можете прикрепить фотографию изделия или чертёж для наглядности</p>
                             <input class="form-control form-control-lg" id="formFileLg" type="file" value="{{old('file')}}" name="file">
                         </div>
                         <div class="form-floating mt-2">

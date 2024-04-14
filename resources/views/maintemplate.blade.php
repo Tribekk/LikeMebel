@@ -32,12 +32,9 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li><a class="dropdown-item" href="{{ route('services') }}">Весь список</a></li>
-                        <li><a class="dropdown-item" href="{{ route('kitchen') }}">Для кухни</a></li>
-                        <li><a class="dropdown-item" href="{{ route('bathroom') }}">Для ванной</a></li>
-                        <li><a class="dropdown-item" href="{{ route('bedroom') }}">Спальная мебель</a></li>
-                        <li><a class="dropdown-item" href="{{ route('wardrobe') }}">Мебель в гардеробную</a></li>
-                        <li><a class="dropdown-item" href="{{ route('living') }}">Мебель в гостинную</a></li>
-                        <li><a class="dropdown-item" href="{{ route('children') }}">Детская мебель</a></li>
+                        @foreach($services as $service)
+                            <li><a class="dropdown-item" href="/service/{{$service['id']}}">{{$service['name']}}</a></li>
+                        @endforeach
                     </ul>
                 </li>
                 <li><a href="{{route('reviews')}}" class="nav-link px-2 text-white">Отзывы</a></li>
@@ -79,7 +76,7 @@
                     <use xlink:href="#bootstrap"></use>
                 </svg>
             </a>
-            <span class="mb-3 mb-md-0 text-white">© 2023 Company, Inc</span>
+            <span class="mb-3 mb-md-0 text-white">© 2023 LikeMebel (Все права защищены)</span>
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -51,16 +52,16 @@ class UserController extends Controller
     }
     public function thisUser(){
         $user = auth()->user();
-
-        return view('thisUser', compact('user'));
+        $services=Service::all();
+        return view('thisUser', compact('user', 'services'));
     }
 
     public function destroy(){
         auth()->user()->delete();
         auth()->logout();
+        $services=Service::all();
 
-
-        return view('login');
+        return view('login', compact('services'));
     }
 
     public function avatar(Request $request){

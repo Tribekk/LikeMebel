@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
+use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,54 +19,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [ServiceController::class, 'index'])->name('home');
 
 Route::get('/news', function () {
+    $services=Service::all();
     return view('news');
 })->name('news');
 
 Route::get('/contacts', function () {
-    return view('contacts');
+    $services=Service::all();
+    return view('contacts', compact('services'));
 })->name('contacts');
 
-Route::get('/bathroom', function () {
-    return view('bathroom');
-})->name('bathroom');
-
-Route::get('/bedroom', function () {
-    return view('bedroom');
-})->name('bedroom');
-
-Route::get('/kitchen', function () {
-    return view('kitchen');
-})->name('kitchen');
-
-Route::get('/children', function () {
-    return view('children');
-})->name('children');
-
-Route::get('/living', function () {
-    return view('living');
-})->name('living');
-
-Route::get('/wardrobe', function () {
-    return view('wardrobe');
-})->name('wardrobe');
-
-Route::get('/services', function () {
-    return view('services');
-})->name('services');
+Route::get('/services', [ServiceController::class, 'view'])->name('services');
+Route::get('/service/{id}', [ServiceController::class, 'serviceView'])->name('service');
 
 Route::controller(UserController::class)->group(function (){
     Route::get('/signup', function (){
-        return view('signup');
+        $services=Service::all();
+        return view('signup', compact('services'));
     })->name('signup');
     Route::post('/signup', 'signup');
 
     Route::get('/login', function (){
-        return view('login');
+        $services=Service::all();
+        return view('login', compact('services'));
     })->name('login');
     Route::post('/login', 'login');
 
@@ -73,12 +53,14 @@ Route::controller(UserController::class)->group(function (){
     Route::post('/thisUser', 'updatePhoneUser');
 
     Route::get('/password', function (){
-        return view('password');
+        $services=Service::all();
+        return view('password', compact('services'));
     })->name('password');
     Route::post('/password', 'password');
 
     Route::get('/avatar', function (){
-        return view('avatar');
+        $services=Service::all();
+        return view('avatar', compact('services'));
     })->name('avatar');
     Route::post('/avatar', 'avatar');
 
@@ -90,3 +72,6 @@ Route::post('/reviews', [ReviewController::class, 'create']);
 
 Route::get('/order', [OrderController::class, 'index'])->name('order');
 Route::post('/order', [OrderController::class, 'create']);
+
+Route::get('/news', [NewsController::class, 'index'])->name('news');
+Route::get('/new/{id}', [NewsController::class, 'viewNew']);

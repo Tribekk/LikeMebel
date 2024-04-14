@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -11,7 +12,8 @@ class ReviewController extends Controller
         $reviews = Review::all();
         $list = $reviews -> count();
         $reviews = Review::query()->orderByDesc('created_at')->paginate(10);
-        return view('reviews', compact('reviews', 'list'));
+        $services=Service::all();
+        return view('reviews', compact('reviews', 'list', 'services'));
     }
 
     public function create(Request $request){

@@ -1,32 +1,15 @@
 @extends('maintemplate')
 
 @section('content')
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
+            @foreach($photos as $photo)
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$photo->id}}"
+                        aria-label="Slide {{($photo->id)+1}}"></button>
+            @endforeach
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -35,11 +18,14 @@
                     <h5>Кухонный гарнитур</h5>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="ico\rm08khYcMIQ.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+            @foreach($photos as $photo)
+                <div class="carousel-item">
+                    <img src="/storage/{{$photo->photo}}" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{$photo->description}}</h5>
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
